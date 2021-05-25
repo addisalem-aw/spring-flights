@@ -14,6 +14,16 @@ import java.util.List;
 import java.util.Locale;
 @RestController
 public class FlightsController {
+    @GetMapping("/ff")
+    public void test() throws ParseException {
+        Flight flight=new Flight();
+        String d1 = "2017-04-21 14:34";
+        DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.ENGLISH);
+        Date date1 = format.parse(d1);
+        flight.setDeparts(date1);
+    }
+
+
     @GetMapping("/flights/flight")
     public Flight getFlight() throws ParseException {
         Flight flight=new Flight();
